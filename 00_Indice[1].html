@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Unidad 2 · Publicar mi web · índice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"><style>
+:root{
+  --bg:#EEF0F6; --stage:#FFFFFF; --panel:#F7F8FC;
+  --ink:#131725; --ink-2:#4A5268; --ink-3:#79819A;
+  --line:#D9DEEA; --line-2:#C2C9DA; --focus:#1E5BD6;
+  --motion:#4C97FF; --looks:#9966FF; --operators:#59C059;
+  --control:#FFAB19; --mb:#E8342A; --pink:#FF6680; --teal:#0FBD8C;
+  --ok:#2E9E4F; --bad:#D6453B;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono","Consolas",ui-monospace,monospace;
+  --accent:#4C97FF;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#080B14; --stage:#121828; --panel:#0E1422;
+    --ink:#EDF0F8; --ink-2:#A8B1C7; --ink-3:#767F96;
+    --line:#26304A; --line-2:#36415E; --focus:#7FB0FF;
+    --ok:#59C059; --bad:#FF6B5E;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#080B14; --stage:#121828; --panel:#0E1422;
+  --ink:#EDF0F8; --ink-2:#A8B1C7; --ink-3:#767F96;
+  --line:#26304A; --line-2:#36415E; --focus:#7FB0FF;
+  --ok:#59C059; --bad:#FF6B5E;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+.eyebrow{font:600 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-family:var(--display);font-weight:800;letter-spacing:-.03em;line-height:1.02;margin:0;font-size:clamp(32px,4.3vw,58px);text-wrap:balance}
+h2{font-family:var(--display);font-weight:700;letter-spacing:-.022em;line-height:1.08;margin:0 0 8px;font-size:clamp(24px,2.9vw,38px);text-wrap:balance}
+h3{font-family:var(--display);font-weight:700;letter-spacing:-.015em;margin:0 0 6px;font-size:19px}
+.lead{font-size:clamp(15px,1.45vw,19px);line-height:1.45;color:var(--ink-2);margin:10px 0 0;max-width:62ch}
+.hint{font-size:13px;color:var(--ink-3);line-height:1.45}
+.mono{font-family:var(--mono)}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn{border:1px solid var(--line-2);background:var(--stage);border-radius:10px;padding:11px 16px;font-weight:600;font-size:14.5px;transition:.14s}
+.btn:hover{border-color:var(--ink-3)}
+.btn:focus-visible{outline:3px solid color-mix(in srgb,var(--focus) 35%,transparent);outline-offset:2px}
+.btn.go{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.go:hover{filter:brightness(1.08)}
+.btn.big{font-size:17px;padding:14px 24px}
+.btn.ghost{background:transparent;color:var(--ink-2)}
+.tag{display:inline-block;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);border:1px solid var(--line-2);border-radius:999px;padding:5px 9px}
+
+body{padding:0 0 12vh}
+.wrap{max-width:1060px;margin:0 auto;padding:0 clamp(18px,3.5vw,38px)}
+.top{background:#0B0F19;color:#EDF2FF;padding:clamp(28px,5vh,52px) 0 clamp(24px,4vh,42px);margin-bottom:clamp(22px,4vh,38px)}
+.top .eyebrow{color:#FFD27A}.top h1{color:#fff;font-size:clamp(28px,4.2vw,52px)}
+.top p{color:#A8B1C7;font-size:clamp(15px,1.5vw,19px);line-height:1.5;max-width:72ch;margin:13px 0 0}
+.metas{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.metas span{font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;border:1px solid #39435F;color:#C6CEE2;border-radius:999px;padding:6px 11px}
+.bloque{margin-bottom:clamp(26px,4.5vh,44px)}
+.bh{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:7px;margin-bottom:14px}
+.bh h2{margin:0;font-size:clamp(20px,2.3vw,28px)}
+.bh span{margin-left:auto;font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.item{display:grid;grid-template-columns:54px 1fr auto;gap:16px;align-items:center;border:1px solid var(--line);border-left:5px solid var(--c,#4C78D8);border-radius:14px;background:var(--panel);padding:14px 17px;margin-bottom:10px}
+.num{width:42px;height:42px;border-radius:12px;background:var(--c,#4C78D8);color:#fff;font:800 19px/42px var(--display);text-align:center}
+.item h3{margin:0 0 3px;font-size:clamp(16px,1.6vw,20px)}
+.item p{margin:0;color:var(--ink-2);font-size:14.5px;line-height:1.42}
+.item .quien{display:inline-block;font:600 10.5px var(--mono);letter-spacing:.09em;text-transform:uppercase;border-radius:999px;padding:4px 9px;margin-top:7px}
+.quien.prof{background:color-mix(in srgb,#D6453B 14%,transparent);color:#D6453B;border:1px solid #D6453B}
+.quien.alum{background:color-mix(in srgb,#2E9E4F 14%,transparent);color:#2E9E4F;border:1px solid #2E9E4F}
+.quien.papel{background:color-mix(in srgb,#6652B8 14%,transparent);color:#6652B8;border:1px solid #6652B8}
+.item a{white-space:nowrap}
+.aviso{border:2px solid var(--accent);border-radius:16px;background:color-mix(in srgb,var(--accent) 8%,transparent);padding:17px 20px;margin-bottom:clamp(22px,4vh,34px)}
+.aviso h3{margin:0 0 7px;color:var(--accent)}
+.aviso p{margin:0 0 8px;font-size:15.5px;line-height:1.5}.aviso p:last-child{margin:0}
+.teclas{display:flex;flex-wrap:wrap;gap:16px;border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:14px 18px;margin-bottom:clamp(22px,4vh,34px)}
+.teclas div{font-size:14.5px;color:var(--ink-2)}
+.teclas b{display:inline-block;font:700 12px var(--mono);background:var(--stage);border:1px solid var(--line-2);border-radius:6px;padding:3px 8px;margin-right:6px;color:var(--ink)}
+@media(max-width:720px){.item{grid-template-columns:44px 1fr}.item a{grid-column:2;justify-self:start;margin-top:8px}}
+</style></head><body>
+
+<header class="top"><div class="wrap">
+<p class="eyebrow">Digitalización 4.º ESO · Unidad 2</p>
+<h1>Publicar mi web: de una etiqueta a una dirección de Internet.</h1>
+<p>Todo el material de la unidad, en el orden en que se usa. Cada archivo se abre con doble clic y funciona sin conexión: no hace falta instalar nada ni crear ninguna cuenta, salvo la de GitHub.</p>
+<div class="metas"><span>4 sesiones</span><span>4.º ESO</span><span>Sin instalación</span></div>
+</div></header>
+
+<div class="wrap">
+
+<div class="aviso">
+<h3>Por dónde empezar</h3>
+<p>La sesión 1 es <b>GitHub</b>, y se hace entera a la vez que el profesor: cada alumno va repitiendo los pasos en su ordenador. Al terminar, todos tienen un repositorio, la publicación activada y una dirección pública suya.</p>
+<p>Esa dirección es la tubería. A partir de ahí, cada sesión siguiente acaba igual: cambias el archivo, haces commit y tu web se actualiza sola. La infraestructura se monta una sola vez.</p>
+</div>
+
+<div class="teclas">
+<div><b>← →</b>pasar diapositiva</div>
+<div><b>N</b>notas docentes</div>
+<div><b>G</b>guion con tiempos</div>
+<div><b>F</b>pantalla completa</div>
+</div>
+
+<section class="bloque">
+<div class="bh"><h2>Sesión 1 · Publicar</h2><span>60 minutos</span></div>
+
+<div class="item" style="--c:#D6453B"><div class="num">1</div><div>
+<h3>Publicar mi web con GitHub</h3>
+<p>Crear el repositorio, escribir <span class="mono">Prueba.html</span>, hacer el primer commit, activar GitHub Pages y conseguir la URL. Incluye el <span class="mono">.nojekyll</span> y el 404 explicado.</p>
+<span class="quien prof">Para proyectar · 18 pantallas</span>
+</div><a class="btn go" href="01_GitHub_publicar_mi_web.html">Abrir</a></div>
+</section>
+
+<section class="bloque">
+<div class="bh"><h2>Sesión 2 · HTML</h2><span>55 minutos</span></div>
+
+<div class="item" style="--c:#D78217"><div class="num">2</div><div>
+<h3>HTML de cero: etiquetas, árbol y vida</h3>
+<p>Qué es una etiqueta, cómo se anidan y por qué forman un árbol. La pantalla 7 enseña el mismo documento en tres vistas enlazadas por color. Termina con el botón que huye, como entrada a JavaScript.</p>
+<span class="quien prof">Para proyectar · 17 pantallas</span>
+</div><a class="btn go" href="02_HTML_de_cero.html">Abrir</a></div>
+
+<div class="item" style="--c:#2E9E4F"><div class="num">3</div><div>
+<h3>Editor HTML</h3>
+<p>Escriben con el código coloreado, ven la página al lado y el árbol dibujándose en vivo. Paleta de etiquetas y botón para descargar el <span class="mono">index.html</span> listo para subir a GitHub.</p>
+<span class="quien alum">Lo abre el alumnado</span>
+</div><a class="btn go" href="03_Editor_HTML.html">Abrir</a></div>
+</section>
+
+<section class="bloque">
+<div class="bh"><h2>Sesión 3 · CSS</h2><span>60 minutos</span></div>
+
+<div class="item" style="--c:#4C78D8"><div class="num">4</div><div>
+<h3>CSS de cero: selectores, caja y cascada</h3>
+<p>Las tres formas de señalar (etiqueta, <span class="mono">.clase</span>, <span class="mono">#id</span>), el constructor de selectores con misiones, el modelo de caja y qué pasa cuando dos reglas chocan.</p>
+<span class="quien prof">Para proyectar · 14 pantallas</span>
+</div><a class="btn go" href="04_CSS_de_cero.html">Abrir</a></div>
+</section>
+
+<section class="bloque">
+<div class="bh"><h2>Sesión 4 · JavaScript</h2><span>55 minutos</span></div>
+
+<div class="item" style="--c:#6652B8"><div class="num">5</div><div>
+<h3>JavaScript de cero: variables, elementos y eventos</h3>
+<p>Variables, tipos de datos, <span class="mono">getElementById</span>, eventos con el HTML enlazado al código, y el <span class="mono">if</span>/<span class="mono">else</span> del portero. Acaba montando un contador paso a paso.</p>
+<span class="quien prof">Para proyectar · 13 pantallas</span>
+</div><a class="btn go" href="05_JS_de_cero.html">Abrir</a></div>
+
+<div class="item" style="--c:#2E9E4F"><div class="num">6</div><div>
+<h3>Taller: mi tarjeta web</h3>
+<p>Laboratorio con los tres archivos (<span class="mono">index.html</span>, <span class="mono">styles.css</span>, <span class="mono">script.js</span>), vista previa en vivo, siete misiones, descarga y los pasos de publicación. Para cuando ya se han visto CSS y JavaScript.</p>
+<span class="quien alum">Lo abre el alumnado</span>
+</div><a class="btn go" href="06_Taller_Mi_tarjeta_web.html">Abrir</a></div>
+</section>
+
+<section class="bloque">
+<div class="bh"><h2>Material de apoyo</h2><span>toda la unidad</span></div>
+
+<div class="item" style="--c:#6652B8"><div class="num">7</div><div>
+<h3>Chuleta de HTML, CSS y JavaScript</h3>
+<p>Una cara de A4: el esqueleto, las etiquetas, la regla CSS, las propiedades más usadas, JavaScript en tres pasos, los cuatro fallos de siempre y el reto final. Se reparte en papel el primer día.</p>
+<span class="quien papel">Para imprimir · A4</span>
+</div><a class="btn go" href="07_Chuleta_HTML_CSS_JS_A4.pdf">Abrir PDF</a></div>
+</section>
+
+<p class="hint" style="border-top:1px solid var(--line);padding-top:16px">IES Duque de Rivas · Digitalización 4.º ESO · Unidad 2. Los archivos de esta carpeta son autónomos: si mueves uno, llévate también la carpeta <span class="mono">assets</span>, que contiene las capturas de la sesión 1.</p>
+
+</div>
+</body></html>
